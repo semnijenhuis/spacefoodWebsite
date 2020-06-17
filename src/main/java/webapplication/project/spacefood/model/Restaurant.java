@@ -1,6 +1,6 @@
 package webapplication.project.spacefood.model;
 
-import java.util.ArrayList;
+
 
 public class Restaurant {
     private Menu menu;
@@ -9,16 +9,25 @@ public class Restaurant {
     private String zipCode;
     private String City;
     private String quote;
-    private String description;
+    private int id;
+    private static int idCounter = 0;
 
-    public Restaurant(String name, String address, String zipCode, String city, String quote, String description) {
+    public Restaurant(String name, String address, String zipCode, String city, String quote) {
         this.name = name;
         this.address = address;
         this.zipCode = zipCode;
         City = city;
         this.quote = quote;
-        this.description = description;
+        this.id = idCounter++;
         menu = new Menu();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
@@ -53,18 +62,10 @@ public class Restaurant {
         return quote;
     }
 
-
-
     public void setQuote(String quote) {
         this.quote = quote;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
+
+
 

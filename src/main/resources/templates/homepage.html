@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <tile th:text="'Beer table from : ' + ${session.userobject.getFirstName()}">Default title text</tile>
+    <link rel="stylesheet" href="/homepage.css">
+</head>
+
+<body>
+<div class="holder">
+
+<div class="grid-container">
+
+    <tr th:each="restaurant: ${restaurants}">
+
+        <div>
+        <td th:text="${restaurant.getName()}"></td>
+            <br/>
+        <td th:text="${restaurant.getAddress()}"></td>
+            <br/>
+        <td th:text="${restaurant.getZipCode()}"></td>
+            <br/>
+            <td th:text="${restaurant.getCity()}"></td>
+            <br/>
+        <td><a th:href="'/homepage/restaurant/' + ${restaurant.id} ">See the details</a> </td>
+
+        </div>
+
+    </tr>
+
+</div>
+
+    <form action="/homepage/createrestaurant" method="POST">
+        <label for="name"><b>company name</b></label>
+        <input type="text" id="name" placeholder="Enter company name"    name="name" >
+        <label for="address"><b>address</b></label>
+        <input type="text" id="address" placeholder="Enter address"    name="address" >
+        <label for="zipCode"><b>zipcode</b></label>
+        <input type="text" id="zipCode" placeholder="Enter zipcode"    name="zipCode" >
+        <label for="city"><b>city</b></label>
+        <input type="text" id="city" placeholder="Enter city"    name="city" >
+
+        <input type="submit"/>
+    </form>
+
+
+</div>
+
+
+
+</body>
+
+
+</html>

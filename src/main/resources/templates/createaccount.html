@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Creating Account page</title>
+    <link rel="stylesheet" href="/createaccount.css">
+</head>
+
+<body>
+
+<svg class="background" viewBox="0 0 1080 1663">
+    <path id="background" d="M 540 0 L 1080 1663 L 0 1663 Z">
+    </path>
+</svg>
+
+<div class="grid-container">
+
+<div>
+    <img id="Image_3" src="Image_3.png" srcset="Image_3.png 1x, Image_3@2x.png 2x">
+</div>
+
+    <div>
+
+        <form id="createform" action="/createaccount" method="post">
+
+            <h1>Create an account</h1>
+
+            <label for="firstName"><b>First name</b></label>
+            <br/>
+            <input type="text" id="firstName" placeholder="Enter email address"    name="firstName" >
+            <br/>
+            <label for="lastName"><b>Last name</b></label>
+            <br/>
+            <input type="text" id="lastName" placeholder="Enter email address"    name="lastName" >
+            <br/>
+            <label for="email"><b>Email address</b></label>
+            <br/>
+            <input type="text" id="email" placeholder="Enter email address"    name="email" >
+            <br/>
+
+            <label for="password"><b>Password</b></label>
+            <br/>
+            <input type="password" id="password" placeholder="Enter password"    name="password" >
+            <br/>
+            <br/>
+            <input type="submit"/>
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+</body>
+
+
+</html>
