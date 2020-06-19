@@ -16,7 +16,56 @@ button:hover{
     color: white;
 
 }
+.home-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto;
+    position: relative;
+    margin: 10px;
+    align-items:center;
+    grid-gap: 90px;
+    justify-content: center;
+}
+
+.home-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    align-items:center;
+    padding: 40px 0;
+    font-size: 30px;
+    justify-content: center;
+}
+
+
+
+
+#homepageimage {
+    position: relative;
+    width: 474px;
+    height: 749px;
+    overflow: visible;
+
+}
+
+#Lets_go_on_a_food_mission {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+
+    position: relative;
+    overflow: visible;
+    width: 605px;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Hoefler Text, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 55px;
+    color: rgba(93,93,93,1);
+}
+
+
 .grid-container {
+    position: relative;
+    overflow: visible;
     border-radius: 6px;
     display: grid;
     filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.161));
@@ -25,11 +74,11 @@ button:hover{
     grid-template-columns: auto auto auto;
     grid-gap: 90px;
     padding: 40px;
-    position: relative;
     margin: 0 auto 100px;
 }
 
 .grid-container > div {
+
     border-radius: 6px;
     ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     background-color:rgba(255,255,255,1);
@@ -42,9 +91,9 @@ button:hover{
     background-color:  rgb(202, 201, 201);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-    padding-right: 25px;
-    padding-left: 25px;
-    transition: 0.5s;
+    padding-right: 15px;
+    padding-left: 15px;
+    transition: 0.3s;
 }
 
 .small-container{
@@ -121,6 +170,7 @@ input[type=text]:hover {
     padding-right: 25px;
     padding-left: 25px;
 }
+
 
 
 

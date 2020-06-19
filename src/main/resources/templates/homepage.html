@@ -1,20 +1,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <tile th:text="'Beer table from : ' + ${session.userobject.getFirstName()}">Default title text</tile>
     <link rel="stylesheet" href="/homepage.css">
 </head>
 
 <body>
 
 
+
 <div class="home-container">
 
     <div>
-        hello
+        <img id="homepageimage" src="homepageimage.png" srcset="homepageimage.png 1x, homepageimage@2x.png 2x">
     </div>
 
-    <div>
-test
+    <div id="Lets_go_on_a_food_mission">
+        <span th:text="'Welcome back ' + ${session.userobject.getFirstName()}"></span>
+        </br>
+        <span>Let’s go on a food mission</span>
     </div>
 
 
@@ -83,6 +85,11 @@ test
 </div>
 
 </body>
+
+<footer>
+
+    nice
+</footer>
 
 
 </html>
