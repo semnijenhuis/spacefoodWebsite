@@ -1,20 +1,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <tile th:text="'Beer table from : ' + ${session.userobject.getFirstName()}">Default title text</tile>
     <link rel="stylesheet" href="/shoppingcart.css">
 </head>
 
 <body>
 
-anything?
+<div class="shopping-container">
+
+    <div id="Lets_go_on_a_food_mission">
+        <span th:text="'Found something good? hope you love it ' + ${session.userobject.getFirstName()}"></span>
+    </div>
+</div>
+
 <div class="grid-container">
 
     <tr th:each="menuitem: ${shoppingcart}">
 
         <div>
-            <td th:text="${menuitem.getName()}"></td>
-            <br/>
-            <td th:text="${menuitem.getPrice()}"></td>
+
+            <td th:text="'ID: ' + ${menuitem.getId()}"></td>
+            <td th:text="'name: ' + ${menuitem.getName()}"></td>
+            <td th:text="'$  ' + ${menuitem.getPrice()}"></td>
 
 
         </div>

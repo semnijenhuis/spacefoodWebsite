@@ -19,15 +19,50 @@ button:hover{
 .home-container{
     display: grid;
     width: 100%;
+    grid-gap: 90px;
     grid-template-columns: auto auto;
     position: relative;
-    margin: 10px;
     align-items:center;
-    grid-gap: 90px;
     justify-content: center;
 }
 
 .home-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    align-items:center;
+    padding: 40px 0;
+    justify-content: center;
+}
+
+.line-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+    position: relative;
+    margin: 10px;
+    align-items:center;
+    justify-content: center;
+}
+
+.line-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    align-items:center;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.add-container{
+    display: grid;
+    width: 100%;
+    grid-gap: 90px;
+    grid-template-columns: auto auto;
+    position: relative;
+    align-items:center;
+    justify-content: center;
+}
+
+.add-container > div {
     border-radius: 6px;
     ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     align-items:center;
@@ -41,8 +76,8 @@ button:hover{
 
 #homepageimage {
     position: relative;
-    width: 474px;
-    height: 749px;
+    width: 100%;
+
     overflow: visible;
 
 }
@@ -52,13 +87,13 @@ button:hover{
 
     position: relative;
     overflow: visible;
-    width: 605px;
+    width: 100%;
     white-space: nowrap;
     text-align: center;
     font-family: Hoefler Text, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 55px;
+    font-size: 50px;
     color: rgba(93,93,93,1);
 }
 
@@ -81,7 +116,7 @@ button:hover{
 
     border-radius: 6px;
     ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
-    background-color:rgba(255,255,255,1);
+    background-color:rgb(254, 255, 246);
     text-align: center;
     padding: 40px 0;
     font-size: 30px;
@@ -93,7 +128,7 @@ button:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     padding-right: 15px;
     padding-left: 15px;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .small-container{
@@ -117,6 +152,24 @@ button:hover{
     overflow: visible;
     width: 100%;
     height: 21px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+#menuline {
+    position: center;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 5px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.menuline {
+    position: center;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    overflow: visible;
+    width: 400px;
     transform: matrix(1,0,0,1,0,0);
 }
 
@@ -153,7 +206,7 @@ button:hover{
 }
 
 input[type=text], select {
-    width: 100%;
+    width: 95%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -169,6 +222,27 @@ input[type=text]:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     padding-right: 25px;
     padding-left: 25px;
+}
+
+#Polygon_2 {
+    fill: rgba(11,44,76,1);
+    stroke: rgba(112,112,112,1);
+    stroke-width: 1px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.Polygon_2 {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    overflow: hidden;
+    position: absolute;
+    width: 1080px;
+    height: 550px;
+    transform: matrix(1,0,0,1,-265.5,253.5) rotate(90deg);
+    transform-origin: center;
+    left: 0px;
+    top: 0px;
 }
 
 

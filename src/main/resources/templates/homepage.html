@@ -5,10 +5,14 @@
 
 <body>
 
+<svg class="Polygon_2" viewBox="0 0 1080 550">
+    <path id="Polygon_2" d="M 540 0 L 1080 550 L 0 550 Z">
+    </path>
+</svg>
+
 
 
 <div class="home-container">
-
     <div>
         <img id="homepageimage" src="homepageimage.png" srcset="homepageimage.png 1x, homepageimage@2x.png 2x">
     </div>
@@ -18,6 +22,96 @@
         </br>
         <span>Let’s go on a food mission</span>
     </div>
+</div>
+
+
+
+<div class="line-container">
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
+
+    </div>
+
+    <div>
+        <svg class="menuline" viewBox="0 0 353.072 3">
+            <path id="menuline" d="M 0 0 L 353.07177734375 0">
+            </path>
+        </svg>
+    </div>
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 200px; float:left; display:inline-block"></div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="add-container">
+
+    <div id="Lets_go_on_a_food_mission">
+        <span>before we start our quest</span>
+        </br>
+        <span>Would you like to add a restaurant?</span>
+
+    </div>
+
+    <form action="/homepage/createrestaurant" method="POST">
+        <label for="name"><b>company name</b></label>
+        <input type="text" id="name" placeholder="Enter company name"    name="name" >
+        </br>
+        <label for="address"><b>address</b></label>
+        <input type="text" id="address" placeholder="Enter address"    name="address" >
+        </br>
+        <label for="zipCode"><b>zipcode</b></label>
+        <input type="text" id="zipCode" placeholder="Enter zipcode"    name="zipCode" >
+        </br>
+        <label for="city"><b>city</b></label>
+        <input type="text" id="city" placeholder="Enter city"    name="city" >
+        </br>
+        <button type="submit">Add restaurant</button>
+    </form>
+
+    </div>
+<div class="line-container">
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 200px; float:left; display:inline-block"></div>
+
+    </div>
+
+    <div>
+        <svg class="menuline" viewBox="0 0 353.072 3">
+            <path id="menuline" d="M 0 0 L 353.07177734375 0">
+            </path>
+        </svg>
+    </div>
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
+
+    </div>
+
+    <div id="Lets_go_on_a_food_mission">
+
+        <span>LIFT OFF!!</span>
+
+    </div>
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 200px; float:left; display:inline-block"></div>
+
+    </div>
+
+</div>
 
 
 </div>
@@ -29,17 +123,7 @@
 
 
 
-<form action="/homepage/createrestaurant" method="POST">
-    <label for="name"><b>company name</b></label>
-    <input type="text" id="name" placeholder="Enter company name"    name="name" >
-    <label for="address"><b>address</b></label>
-    <input type="text" id="address" placeholder="Enter address"    name="address" >
-    <label for="zipCode"><b>zipcode</b></label>
-    <input type="text" id="zipCode" placeholder="Enter zipcode"    name="zipCode" >
-    <label for="city"><b>city</b></label>
-    <input type="text" id="city" placeholder="Enter city"    name="city" >
-    <button type="submit">Add restaurant</button>
-</form>
+
 
 
 
@@ -48,7 +132,8 @@
     <button type="submit">Submit</button>
 </form>
 
-<div class="holder">
+
+
     <div class="grid-container">
         <tr th:each="restaurant: ${restaurants}">
             <div>
@@ -66,7 +151,6 @@
             <br/>
 
                 <div class="small-container">
-
                     <form id="button"  th:action="'/homepage/restaurant/' + ${restaurant.id}"    method="get">
                     <input type="submit" value="Open" class="button" />
                     </form>
@@ -82,13 +166,15 @@
             </div>
         </tr>
     </div>
-</div>
+
+
+
+
 
 </body>
 
 <footer>
-
-    nice
+    <div id="spacer"  style="width: 100px; height: 800px; float:left; display:inline-block"></div>
 </footer>
 
 
