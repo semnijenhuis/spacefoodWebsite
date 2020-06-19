@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <tile th:text="'restaurant table from : ' + ${session.editrestaurant.getName()}">Default title text</tile>
+    <link rel="stylesheet" href="/editrestaurant.css.css">
+</head>
+
+<body>
+
+<form action="/edit" method="post">
+
+    <label for="name"> <td th:text="${session.editrestaurant.getName()}"></td></label>
+    <input type="text" id="name" placeholder="Enter new name"   name="name" >
+
+    <label for="address"><td th:text="${session.editrestaurant.getAddress()}"></td>  </label>
+    <input type="text" id="address" placeholder="Enter new address"    name="address" >
+
+    <label for="zipCode">  <td th:text="${session.editrestaurant.getZipCode()}"></td>  </label>
+    <input type="text" id="zipCode" placeholder="Enter new zipcode"    name="zipCode" >
+
+    <label for="city">  <td th:text="${session.editrestaurant.getCity()}"></td>   </label>
+    <input type="text" id="city" placeholder="Enter new city"    name="city" >
+
+    <input type="submit"/>
+</form>
+
+
+</body>
+
+
+</html>

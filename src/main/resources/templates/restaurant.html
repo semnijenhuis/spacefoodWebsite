@@ -1,12 +1,63 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <tile th:text="'restaurant table from : ' + ${session.choosenrestaurant.getName()}">Default title text</tile>
-    <link rel="stylesheet" href="/homepage.css">
+    <tile th:text="'restaurant table from : ' + ${session.openrestaurant.getName()}">Default title text</tile>
+    <link rel="stylesheet" href="/restaurant.css">
 </head>
 
 <body>
 
-this is a test
+
+<div class="grid-container">
+
+    <tr th:each="menuitem: ${restaurants.get(0).getMenu()}">
+
+        <div>
+            <td th:text="${menuitem.getName()}"></td>
+            <br/>
+            <td th:text="${menuitem.getDescription()}"></td>
+            <br/>
+            <td th:text="${menuitem.getPrice()}"></td>
+            <td th:text="${menuitem.getId()}"></td>
+            <br/>
+            <td><a th:href="'/addshoppingcart' + ${menuitem} ">open</a> </td>
+
+        </div>
+
+    </tr>
+
+</div>
+
+<form action="/shoppingcart/add"  method="post">
+
+    <label for="rId"><b>rId</b></label>
+    <input type="number" step="any" id="rId" placeholder="Enter restaurant id here"    name="rId" >
+
+    <label for="iId"><b>iId</b></label>
+    <input type="number" step="any" id="iId" placeholder="Enter item id here"    name="iId" >
+
+    <label for="quantity"><b>quantity</b></label>
+    <input type="number" step="any"  id="quantity" placeholder="Enter price"    name="quantity" >
+
+    <input type="submit"/>
+
+
+</form>
+
+
+<form action="/homepage/createmenuitem/"  method="post">
+    <label for="name"><b>name</b></label>
+    <input type="text" id="name" placeholder="Enter name"    name="name" >
+
+    <label for="description"><b>description</b></label>
+    <input type="text" id="description" placeholder="Enter description"    name="description" >
+
+    <label for="price"><b>price</b></label>
+    <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" >
+
+    <input type="submit"/>
+
+
+</form>
 
 
 </body>

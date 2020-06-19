@@ -1,5 +1,6 @@
 body{
     background-color: rgba(255,251,229,1);
+    font-family: Helvetica Neue, serif;
 }
 
 button {
@@ -19,7 +20,7 @@ button {
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Helvetica Neue;
+    font-family: Helvetica Neue, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;

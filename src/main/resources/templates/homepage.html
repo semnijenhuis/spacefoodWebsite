@@ -5,6 +5,11 @@
 </head>
 
 <body>
+
+<form action="/shoppingcart/open" method="GET">
+    <button type="submit">Submit</button>
+</form>
+
 <div class="holder">
 
 <div class="grid-container">
@@ -20,7 +25,10 @@
             <br/>
             <td th:text="${restaurant.getCity()}"></td>
             <br/>
-        <td><a th:href="'/homepage/restaurant/' + ${restaurant.id} ">See the details</a> </td>
+
+            <td><a th:href="'/homepage/restaurant/' + ${restaurant.id} ">open</a> </td>
+            <td><a th:href="'/homepage/edit/' + ${restaurant.id} ">edit</a> </td>
+            <td><a th:href="'/homepage/delete/' + ${restaurant.id} ">delete</a> </td>
 
         </div>
 

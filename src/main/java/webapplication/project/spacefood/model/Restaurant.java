@@ -1,9 +1,12 @@
 package webapplication.project.spacefood.model;
 
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Restaurant {
-    private Menu menu;
+
+   private List<MenuItem> menu;
     private String name;
     private String address;
     private String zipCode;
@@ -19,8 +22,29 @@ public class Restaurant {
         City = city;
         this.quote = quote;
         this.id = idCounter++;
-        menu = new Menu();
+        menu = new ArrayList<>();
     }
+
+    public MenuItem getMenuItem(Integer iId){
+        for (int i = 0; i < menu.size() ; i++) {
+            if (iId == menu.get(i).getId()){
+                return menu.get(i);
+            }
+        }
+        return null;
+    }
+
+    public void addMenuItem(MenuItem menuItem){
+        menu.add(menuItem);
+    }
+
+
+
+    public List<MenuItem> getMenu() {
+        return menu;
+    }
+
+
 
     public int getId() {
         return id;
@@ -64,6 +88,19 @@ public class Restaurant {
 
     public void setQuote(String quote) {
         this.quote = quote;
+    }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "menu=" + menu +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", City='" + City + '\'' +
+                ", quote='" + quote + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
 

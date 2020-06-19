@@ -45,9 +45,8 @@ public class LoginController {
         DataProvider.addUser(user);
         usernames.add(user.getEmail());
         password.add(user.getPassword());
-        System.out.print(DataProvider.getUsers());
 
-        return "loginscreen";
+        return "redirect:/login";
     }
 
     @PostMapping("/login")

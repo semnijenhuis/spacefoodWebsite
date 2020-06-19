@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <tile th:text="'Beer table from : ' + ${session.userobject.getFirstName()}">Default title text</tile>
+    <link rel="stylesheet" href="/shoppingcart.css">
+</head>
+
+<body>
+
+anything?
+<div class="grid-container">
+
+    <tr th:each="menuitem: ${shoppingcart}">
+
+        <div>
+            <td th:text="${menuitem.getName()}"></td>
+            <br/>
+            <td th:text="${menuitem.getPrice()}"></td>
+
+
+        </div>
+
+    </tr>
+
+</div>
+
+
+
+</body>
+
+
+</html>

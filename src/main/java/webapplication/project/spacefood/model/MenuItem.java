@@ -4,11 +4,18 @@ public class MenuItem {
     private String name;
     private String description;
     private double price;
+    private int id;
+    private static int idCounter = 0;
 
     public MenuItem(String name, String description, double price) {
         this.name = name;
         this.description = description;
         this.price = price;
+        this.id = idCounter++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
@@ -33,5 +40,14 @@ public class MenuItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "MenuItem{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
