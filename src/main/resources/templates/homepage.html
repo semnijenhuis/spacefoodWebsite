@@ -6,53 +6,81 @@
 
 <body>
 
+
+<div class="home-container">
+
+    <div>
+        hello
+    </div>
+
+    <div>
+test
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<form action="/homepage/createrestaurant" method="POST">
+    <label for="name"><b>company name</b></label>
+    <input type="text" id="name" placeholder="Enter company name"    name="name" >
+    <label for="address"><b>address</b></label>
+    <input type="text" id="address" placeholder="Enter address"    name="address" >
+    <label for="zipCode"><b>zipcode</b></label>
+    <input type="text" id="zipCode" placeholder="Enter zipcode"    name="zipCode" >
+    <label for="city"><b>city</b></label>
+    <input type="text" id="city" placeholder="Enter city"    name="city" >
+    <button type="submit">Add restaurant</button>
+</form>
+
+
+
+
 <form action="/shoppingcart/open" method="GET">
     <button type="submit">Submit</button>
 </form>
 
 <div class="holder">
-
-<div class="grid-container">
-
-    <tr th:each="restaurant: ${restaurants}">
-
-        <div>
-        <td th:text="${restaurant.getName()}"></td>
-            <br/>
-        <td th:text="${restaurant.getAddress()}"></td>
-            <br/>
-        <td th:text="${restaurant.getZipCode()}"></td>
+    <div class="grid-container">
+        <tr th:each="restaurant: ${restaurants}">
+            <div>
+                <td th:text="${#strings.toUpperCase(restaurant.getName())}"></td>
+                <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
+                    <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
+                    </path>
+                </svg>
+                <br/>
+                <td th:text="${restaurant.getAddress()}"></td>
+                <br/>
+                <td th:text="${restaurant.getZipCode()}"></td>
             <br/>
             <td th:text="${restaurant.getCity()}"></td>
             <br/>
 
-            <td><a th:href="'/homepage/restaurant/' + ${restaurant.id} ">open</a> </td>
-            <td><a th:href="'/homepage/edit/' + ${restaurant.id} ">edit</a> </td>
-            <td><a th:href="'/homepage/delete/' + ${restaurant.id} ">delete</a> </td>
+                <div class="small-container">
 
-        </div>
+                    <form id="button"  th:action="'/homepage/restaurant/' + ${restaurant.id}"    method="get">
+                    <input type="submit" value="Open" class="button" />
+                    </form>
 
-    </tr>
+                    <form id="button"  th:action="'/homepage/edit/' + ${restaurant.id} "    method="get">
+                    <input type="submit" value="Edit" class="button" />
+                    </form>
 
+                    <form id="button"  th:action="'/homepage/delete/' + ${restaurant.id} "    method="get">
+                    <input type="submit" value="Delete" class="button" />
+                    </form>
+                </div>
+            </div>
+        </tr>
+    </div>
 </div>
-
-    <form action="/homepage/createrestaurant" method="POST">
-        <label for="name"><b>company name</b></label>
-        <input type="text" id="name" placeholder="Enter company name"    name="name" >
-        <label for="address"><b>address</b></label>
-        <input type="text" id="address" placeholder="Enter address"    name="address" >
-        <label for="zipCode"><b>zipcode</b></label>
-        <input type="text" id="zipCode" placeholder="Enter zipcode"    name="zipCode" >
-        <label for="city"><b>city</b></label>
-        <input type="text" id="city" placeholder="Enter city"    name="city" >
-
-        <input type="submit"/>
-    </form>
-
-
-</div>
-
-
 
 </body>
 

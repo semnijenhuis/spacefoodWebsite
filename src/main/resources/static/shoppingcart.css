@@ -2,3 +2,25 @@ body{
     background-color: rgba(255,251,229,1);
     font-family: Helvetica Neue, serif;
 }
+
+.grid-container {
+    border-radius: 6px;
+    display: grid;
+    filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    width: 1200px;
+    height: 800px;
+    grid-template-columns: auto auto auto;
+    grid-gap: 90px;
+    padding: 40px;
+    position: relative;
+    margin: 0 auto 100px;
+}
+
+.grid-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    background-color:rgba(255,255,255,1);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 30px;
+}

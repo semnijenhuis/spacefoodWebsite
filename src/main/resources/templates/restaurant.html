@@ -12,8 +12,15 @@
     <tr th:each="menuitem: ${restaurants.get(0).getMenu()}">
 
         <div>
-            <td th:text="${menuitem.getName()}"></td>
+            <td th:text="${#strings.toUpperCase(menuitem.getName())}"></td>
             <br/>
+
+            <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
+                <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
+                </path>
+            </svg>
+            <br/>
+
             <td th:text="${menuitem.getDescription()}"></td>
             <br/>
             <td th:text="${menuitem.getPrice()}"></td>
