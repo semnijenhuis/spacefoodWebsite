@@ -35,13 +35,22 @@ public class LoginController {
         return "loginscreen";
     }
 
+    @GetMapping("/logout")
+    public String logOut(HttpSession session ) {
+        session.removeAttribute("userobject");
+
+        return "loginscreen";
+    }
+
     @GetMapping("/createaccount")
     public String getCreateAccountPage( ) {
         return "createaccount";
     }
 
     @PostMapping("/createaccount")
-    public String addAccount(User user) {
+    public String addAccount(User user, Model model) {
+
+
         DataProvider.addUser(user);
         usernames.add(user.getEmail());
         password.add(user.getPassword());
@@ -52,21 +61,31 @@ public class LoginController {
     @PostMapping("/login")
     public String checkAccount(HttpSession session, User user, Model model) {
 
-       if(usernames.contains(user.getEmail()) && password.contains(user.getPassword() )){
+        if(usernames.contains(user.getEmail()) && password.contains(user.getPassword() )){
 
-           for (int i = 0; i < DataProvider.users.size() ; i++) {
-               User search = DataProvider.getUsers().get(i);
+            for (int i = 0; i < DataProvider.users.size() ; i++) {
+                User search = DataProvider.getUsers().get(i);
 
-               if (search.getEmail().equals(user.getEmail())){
-                  session.setAttribute("userobject",search);
-               }
+                if (search.getEmail().equals(user.getEmail())){
 
-           }
 
-           return "redirect:/homepage";
-       }
-        return "404";
+                    if (search.getPassword().equals(user.getPassword())){
+
+                        session.setAttribute("userobject",search);
+                        return "redirect:/homepage";
+                    }
+                    model.addAttribute("errormessage","password incorrect ");
+                    return "loginscreen";
+                }
+
+            }
+
+            return "redirect:/homepage";
+        }
+        model.addAttribute("errormessage","email doesnot excist");
+        return "loginscreen";
     }
+
 
 
 }

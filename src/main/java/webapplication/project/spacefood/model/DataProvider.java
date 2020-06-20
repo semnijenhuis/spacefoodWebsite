@@ -9,6 +9,7 @@ public class DataProvider {
     public static List<User> users = new ArrayList<>();
     public static List<Restaurant> restaurants = new ArrayList<>();
     public static List<MenuItem> shoppingcart = new ArrayList<>();
+    public static int logedInUser;
     public static char[] list = {'a','b'};
    public static char[] alphabets = "abcdefghijklmnopqrstuvwxyz".toCharArray();
    public static double totalPrice;
@@ -42,8 +43,17 @@ public class DataProvider {
 
     }
 
+    public static int getAllemails() {
+        return logedInUser;
+    }
+
+    public static void setLogedInUser(int logedInUser) {
+        DataProvider.logedInUser = logedInUser;
+    }
+
     public static double calculateTotal(){
 
+        totalPrice = 0;
         for (int i = 0; i < shoppingcart.size(); i++) {
             totalPrice += shoppingcart.get(i).getPrice();
 
@@ -54,36 +64,17 @@ public class DataProvider {
     }
 
 
-    public  static void checkWord (){
-        List<Restaurant> beginalphabetRestaurant = getRestaurants();
-        List<Restaurant> endalphabetRestaurant = null;
+    public static List<String> getUsersEmail() {
+        List<String> emails = null;
+        for (int i = 0; i < users.size(); i++) {
+            emails.add(users.get(i).getEmail());
 
-
-        String lowest;
-        int index = 0;
-
-        for (int i = 0; i < beginalphabetRestaurant.size(); i++) {
-            Restaurant chosenOne = beginalphabetRestaurant.get(i);
-            int number = alphabetcheck.check(chosenOne.getName().charAt(0));
-
-            for (int j = 0; j < restaurants.size() ; j++) {
-                if( alphabetcheck.check(restaurants.get(j).getName().charAt(0)) <number){
-                    chosenOne = beginalphabetRestaurant.get(j);
-                }
-
-                endalphabetRestaurant.add(chosenOne);
-                //beginalphabetRestaurant.remove(chosenOne);
-                System.out.println(" ");
-                System.out.println(beginalphabetRestaurant);
-                System.out.println(endalphabetRestaurant);
-
-
-
-            }
         }
 
 
 
+
+        return emails;
     }
 
 
@@ -133,7 +124,7 @@ public class DataProvider {
         }
     }
 
-    public static User verifyUser(String email, String password){
+    public static User verifyPassword(String email, String password){
         for (int i = 0; i < users.size(); i++) {
             User user = users.get(i);
             if (user.getEmail() == email && user.getPassword()== password){
@@ -143,10 +134,10 @@ public class DataProvider {
         return null;
     }
 
-    public static Restaurant getRestaurantByName(String name) {
-        for (Restaurant restaurant: restaurants) {
-            if (restaurant.getName() == name) {
-                return restaurant;
+    public static User getUserByEmail(String email) {
+        for (User user: users) {
+            if (user.getEmail() == email) {
+                return user;
             }
 
         }

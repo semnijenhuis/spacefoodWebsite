@@ -38,6 +38,8 @@
                 <br/>
                 <input type="password" id="password" placeholder="Enter password"    name="password" >
                 <br/>
+                <td   th:if="${errormessage}"  th:text="${errormessage}"  ></td>
+                <br/>
                 <br/>
                 <button type="submit">Login</button>
                 <br/>

@@ -14,16 +14,18 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/homepage")
 public class HomeController {
 
-    @GetMapping("/home")
-    public String getHome() {
-        return "homepage";
-    }
 
 
     @GetMapping("")
     public String getHomepage(Model model) {
         model.addAttribute("restaurants",DataProvider.getRestaurants());
         return "homepage";
+    }
+
+    @GetMapping("/redirect")
+    public String getredirect( ) {
+
+        return "redirect:/homepage";
     }
 
 
