@@ -26,6 +26,15 @@
             <td th:text="${menuitem.getPrice()}"></td>
             <td th:text="${menuitem.getId()}"></td>
             <br/>
+
+                <form id="button"  th:action="'/shoppingcart/testadd/' + ${session.openrestaurant.getId()}"    method="post">
+                    <input type="submit" value="Add" class="button" />
+                </form>
+
+
+            </form>
+
+
             <td><a th:href="'/addshoppingcart' + ${menuitem} ">open</a> </td>
 
         </div>
@@ -37,7 +46,7 @@
 <form action="/shoppingcart/add"  method="post">
 
     <label for="rId"><b>rId</b></label>
-    <input type="number" step="any" id="rId" placeholder="Enter restaurant id here"    name="rId" >
+    <input type="text" step="any" id="rId" placeholder="Enter restaurant id here"    name="rId" >
 
     <label for="iId"><b>iId</b></label>
     <input type="number" step="any" id="iId" placeholder="Enter item id here"    name="iId" >
@@ -46,7 +55,6 @@
     <input type="number" step="any"  id="quantity" placeholder="Enter price"    name="quantity" >
 
     <input type="submit"/>
-
 
 </form>
 
@@ -65,6 +73,13 @@
 
 
 </form>
+
+
+
+
+
+
+
 
 
 </body>
