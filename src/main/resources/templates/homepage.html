@@ -10,7 +10,7 @@
     <form action="/shoppingcart" method="GET">
         <button class="button" type="submit">Cart</button>
     </form>
-    <form action="/homepage/redirect" method="GET">
+    <form action="cookiehome" method="GET">
         <button class="button" type="submit">Home</button>
     </form>
     <form action="/logout" method="GET">
@@ -155,10 +155,6 @@
                     <input type="submit" value="Open" class="button" />
                     </form>
 
-                    <form id="button"  th:action="'/homepage/edit/' + ${restaurant.id} "    method="get">
-                    <input type="submit" value="Edit" class="button" />
-                    </form>
-
                     <form id="button"  th:action="'/homepage/delete/' + ${restaurant.id} "    method="get">
                     <input type="submit" value="Delete" class="button" />
                     </form>
@@ -181,7 +177,7 @@
         <form action="/shoppingcart" method="GET">
             <button class="button" type="submit">Cart</button>
         </form>
-        <form action="/homepage/redirect" method="GET">
+        <form action="/cookiehome" method="GET">
             <button class="button" type="submit">Home</button>
         </form>
         <form action="/logout" method="GET">

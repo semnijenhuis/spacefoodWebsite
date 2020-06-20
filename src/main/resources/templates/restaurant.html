@@ -16,7 +16,7 @@
     <form action="/shoppingcart" method="GET">
         <button class="button" type="submit">Cart</button>
     </form>
-    <form action="/homepage/redirect" method="GET">
+    <form action="/cookiehome" method="GET">
         <button class="button" type="submit">Home</button>
     </form>
     <form action="/logout" method="GET">
@@ -72,9 +72,7 @@
 
 
 <div class="additem-container">
-
-
-
+    <div>
     <form th:action="'/homepage/additem/' + ${session.openrestaurant.getId()}"    method="post">
 
 
@@ -89,7 +87,7 @@
 
         <input type="submit"/>
     </form>
-
+</div>
     <div id="Lets_go_on_a_food_mission">
         <span>it looks nice but...</span>
         </br>
@@ -188,10 +186,10 @@
 
     <div class="topbar-container">
 
-        <form action="/topbar-container" method="GET">
+        <form action="/shoppingcart" method="GET">
             <button class="button" type="submit">Cart</button>
         </form>
-        <form action="/homepage/redirect" method="GET">
+        <form action="/cookiehome" method="GET">
             <button class="button" type="submit">Home</button>
         </form>
         <form action="/logout" method="GET">

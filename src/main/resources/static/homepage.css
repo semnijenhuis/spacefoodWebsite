@@ -134,9 +134,9 @@ button:hover{
 
 .small-container{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     position: relative;
-    margin: 10px
+    margin: autopx
 }
 
 #restaurantAddresUnderline {

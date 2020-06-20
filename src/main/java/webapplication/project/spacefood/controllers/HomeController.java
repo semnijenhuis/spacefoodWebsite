@@ -36,24 +36,6 @@ public class HomeController {
 
     }
 
-        @GetMapping("/edit/{id}")
-        public String getEditRestaurantDetails(@PathVariable("id")Integer id, HttpSession session) {
-            session.setAttribute("editrestaurant",DataProvider.getRestaurantByIndex(id));
-        return "editrestaurant";
-
-    }
-
-
-
-    @PostMapping("/edit/{id}")
-    public String getSetEditRestaurantDetails(@PathVariable("id")Integer id, HttpSession session, Model model) {
-        model.addAttribute("restaurants",DataProvider.getRestaurants());
-        DataProvider.editRestaurant(DataProvider.getRestaurantByIndex(id));
-        return DataProvider.getRestaurantByIndex(id).toString();
-
-    }
-
-
 
     @GetMapping("/restaurant/{id}")
     public String getRestaurantDetails(@PathVariable("id")Integer id, HttpSession session,Model model) {
@@ -89,10 +71,16 @@ public class HomeController {
 
        DataProvider.getRestaurantByIndex(name).addMenuItem(menuItem);
 
+
+
         String url = "redirect:/homepage/restaurant/"  +name ;
 
         return url;
     }
+
+
+
+
 
 
 }

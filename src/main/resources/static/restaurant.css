@@ -189,6 +189,7 @@ input[type=password]:hover {
 
 }
 
+
 #Lets_go_on_a_food_mission {
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
 
@@ -200,7 +201,7 @@ input[type=password]:hover {
     font-family: Hoefler Text, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 90px;
+    font-size: 50px;
     color: rgba(93,93,93,1);
 }
 
@@ -242,8 +243,9 @@ input[type=password]:hover {
 
 .additem-container{
     display: grid;
-    width: 100%;
+    width: 90%;
     grid-gap: 90px;
+    margin: 30 70px;
     grid-template-columns: auto auto;
     position: relative;
     align-items:center;
@@ -298,6 +300,7 @@ input[type=number]:hover {
 }
 
 .topbar-container{
+    margin: 30 90px;
     grid-gap: 10px;
     display: grid;
     width: 100%;
