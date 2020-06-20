@@ -83,11 +83,13 @@ public class HomeController {
     }
 
     @PostMapping("/additem/{name}")
-    public String addItem(@PathVariable("name")String name) {
+    public String addItem(@PathVariable("name")Integer name, MenuItem menuItem) {
 
+       DataProvider.getRestaurantByIndex(name).addMenuItem(menuItem);
 
+        String url = "redirect:/homepage/restaurant/"  +name ;
 
-        return "redirect:/homepage";
+        return url;
     }
 
 
