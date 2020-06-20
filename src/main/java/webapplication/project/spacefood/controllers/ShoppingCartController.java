@@ -12,15 +12,17 @@ import webapplication.project.spacefood.model.MenuItem;
 import webapplication.project.spacefood.model.Restaurant;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/shoppingcart")
 public class ShoppingCartController {
 
 
-    @GetMapping("/open")
+    @GetMapping("")
     public String getShoppingcart(Model model) {
         model.addAttribute("shoppingcart",DataProvider.getShoppingcart());
+        model.addAttribute("totalPrice",DataProvider.calculateTotal());
 
         return "shoppingcart";
 
@@ -30,12 +32,18 @@ public class ShoppingCartController {
     @PostMapping("/testadd/{name}")
     public String testRestaurant(@PathVariable("name")String name) {
 
-        System.out.println("");
-        System.out.println(name);
-        System.out.println("");
-        System.out.println("");
-        String url = "redirect:/homepage/restaurant/" +name;
+        String string = name;
+        String[] parts = string.split("-");
+        String restaurantName = parts[0];
+        String menuName = parts[1];
 
+        int restaurantIDint=Integer.parseInt(restaurantName);
+        int menuIDint=Integer.parseInt(menuName);
+
+        DataProvider.addToShoppingCart(DataProvider.getRestaurantByIndex(restaurantIDint).getMenuItem(menuIDint));
+        DataProvider.calculateTotal();
+
+        String url = "redirect:/homepage/restaurant/"  +restaurantIDint ;
 
         return url;
     }

@@ -34,6 +34,15 @@ public class Restaurant {
         return null;
     }
 
+    public MenuItem getMenuName(String name){
+        for (int i = 0; i < menu.size() ; i++) {
+            if (name == menu.get(i).getName()){
+                return menu.get(i);
+            }
+        }
+        return null;
+    }
+
     public void addMenuItem(MenuItem menuItem){
         menu.add(menuItem);
     }

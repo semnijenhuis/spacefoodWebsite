@@ -8,7 +8,7 @@
 <div class="shopping-container">
 
     <div id="Lets_go_on_a_food_mission">
-        <span th:text="'Found something good? hope you love it ' + ${session.userobject.getFirstName()}"></span>
+        <span th:text="'Hey ' + ${session.userobject.getFirstName()} +', your total is: $' + ${totalPrice} "></span>
     </div>
 </div>
 
@@ -22,12 +22,14 @@
             <td th:text="'name: ' + ${menuitem.getName()}"></td>
             <td th:text="'$  ' + ${menuitem.getPrice()}"></td>
 
-
         </div>
 
     </tr>
 
+
 </div>
+
+
 
 
 

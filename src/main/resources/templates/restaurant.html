@@ -7,41 +7,27 @@
 <body>
 
 
-<div class="grid-container">
-
-    <tr th:each="menuitem: ${restaurants.get(0).getMenu()}">
-
-        <div>
-            <td th:text="${#strings.toUpperCase(menuitem.getName())}"></td>
-            <br/>
-
-            <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
-                <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
-                </path>
-            </svg>
-            <br/>
-
-            <td th:text="${menuitem.getDescription()}"></td>
-            <br/>
-            <td th:text="${menuitem.getPrice()}"></td>
-            <td th:text="${menuitem.getId()}"></td>
-            <br/>
-
-                <form id="button"  th:action="'/shoppingcart/testadd/' + ${session.openrestaurant.getId()}"    method="post">
-                    <input type="submit" value="Add" class="button" />
-                </form>
+<svg class="Polygon_2" viewBox="0 0 1080 550">
+    <path id="Polygon_2" d="M 540 0 L 1080 550 L 0 550 Z">
+    </path>
+</svg>
 
 
-            </form>
 
+<div class="restaurant-container">
+    <div>
+        <img id="restaurantstart" src="restaurantstart.png" srcset="restaurantstart.jpg">
+    </div>
 
-            <td><a th:href="'/addshoppingcart' + ${menuitem} ">open</a> </td>
-
-        </div>
-
-    </tr>
-
+    <div id="Lets_go_on_a_food_mission">
+        <span th:text="'Found something ' + ${session.userobject.getFirstName()} + '?'"></span>
+        </br>
+        <span>Let’s go on a food mission</span>
+    </div>
 </div>
+
+
+
 
 <form action="/shoppingcart/add"  method="post">
 
@@ -76,13 +62,57 @@
 
 
 
+<div class="grid-container">
 
+    <tr th:each="menuitem: ${restaurants.get(0).getMenu()}">
+
+        <div>
+            <td th:text="${#strings.toUpperCase(menuitem.getName())}"></td>
+            <br/>
+
+            <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
+                <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
+                </path>
+            </svg>
+            <br/>
+
+            <td th:text="${menuitem.getDescription()}"></td>
+            <br/>
+
+
+            <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
+                <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
+                </path>
+            </svg>
+
+            <br/>
+            <td th:text="${menuitem.getPrice()}"></td>
+            <br/>
+
+
+
+            <form id="button"  th:action="'/shoppingcart/testadd/' + ${session.openrestaurant.getId()} +'-' + ${menuitem.getId()}"    method="post">
+                <input type="submit" value="Add" class="button" />
+            </form>
+
+
+            </form>
+
+        </div>
+
+    </tr>
+
+</div>
 
 
 
 
 
 </body>
+
+<footer>
+    <div id="spacer"  style="width: 100px; height: 800px; float:left; display:inline-block"></div>
+</footer>
 
 
 </html>

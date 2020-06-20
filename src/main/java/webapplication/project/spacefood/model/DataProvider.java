@@ -11,6 +11,7 @@ public class DataProvider {
     public static List<MenuItem> shoppingcart = new ArrayList<>();
     public static char[] list = {'a','b'};
    public static char[] alphabets = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+   public static double totalPrice;
 
 
     static {
@@ -38,6 +39,17 @@ public class DataProvider {
 
         restaurants.get(0).addMenuItem(menuItem1);
         shoppingcart.add(menuItem1);
+
+    }
+
+    public static double calculateTotal(){
+
+        for (int i = 0; i < shoppingcart.size(); i++) {
+            totalPrice += shoppingcart.get(i).getPrice();
+
+        }
+        System.out.println(totalPrice);
+        return totalPrice;
 
     }
 
@@ -130,6 +142,18 @@ public class DataProvider {
         }
         return null;
     }
+
+    public static Restaurant getRestaurantByName(String name) {
+        for (Restaurant restaurant: restaurants) {
+            if (restaurant.getName() == name) {
+                return restaurant;
+            }
+
+        }
+        return null;
+    }
+
+
 
     public static Restaurant getRestaurantByIndex(Integer id) {
         for (Restaurant restaurant: restaurants) {
