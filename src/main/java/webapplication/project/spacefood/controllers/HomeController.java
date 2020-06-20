@@ -82,8 +82,9 @@ public class HomeController {
         return "redirect:/homepage";
     }
 
-    @PostMapping("/filterAZ")
-    public String filterAZ(){
+    @PostMapping("/additem/{name}")
+    public String addItem(@PathVariable("name")String name) {
+
 
 
         return "redirect:/homepage";

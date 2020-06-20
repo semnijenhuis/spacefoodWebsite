@@ -145,7 +145,6 @@ input[type=password]:hover {
 .restaurant-container{
     display: grid;
     width: 100%;
-    grid-gap: 90px;
     grid-template-columns: auto auto;
     position: relative;
     align-items:center;
@@ -180,6 +179,124 @@ input[type=password]:hover {
     left: 0px;
     top: 0px;
 }
+
+#restaurantimg {
+    filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    position: relative;
+    width: 80px;
+    height: 613px;
+    overflow: visible;
+
+}
+
+#Lets_go_on_a_food_mission {
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-family: Hoefler Text, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 90px;
+    color: rgba(93,93,93,1);
+}
+
+#menuline {
+    position: center;
+    fill: transparent;
+    stroke: rgba(112,112,112,1);
+    stroke-width: 5px;
+    stroke-linejoin: miter;
+    stroke-linecap: butt;
+    stroke-miterlimit: 4;
+    shape-rendering: auto;
+}
+.menuline {
+    position: center;
+    filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+    overflow: visible;
+    width: 400px;
+    transform: matrix(1,0,0,1,0,0);
+}
+
+.line-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+    position: relative;
+    margin: 10px;
+    align-items:center;
+    justify-content: center;
+}
+
+.line-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    align-items:center;
+    font-size: 30px;
+    justify-content: center;
+}
+
+.additem-container{
+    display: grid;
+    width: 100%;
+    grid-gap: 90px;
+    grid-template-columns: auto auto;
+    position: relative;
+    align-items:center;
+    justify-content: center;
+}
+
+.additem-container > div {
+    border-radius: 6px;
+    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    align-items:center;
+    padding: 40px 0;
+    font-size: 30px;
+    justify-content: center;
+}
+
+input[type=text], select {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text]:hover {
+    background-color:  rgb(95, 95, 95);
+    color: white;
+    border: 1px solid rgb(95, 95, 95);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+input[type=number], select {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=number]:hover {
+    background-color:  rgb(95, 95, 95);
+    color: white;
+    border: 1px solid rgb(95, 95, 95);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
 
 
 

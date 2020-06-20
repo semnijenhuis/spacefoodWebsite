@@ -49,33 +49,6 @@ public class ShoppingCartController {
     }
 
 
-    @PostMapping("/add")
-    public String addShoppingcart(Integer rId,Integer iId, Integer quantity){
-
-        for (int i = 0; i < quantity ; i++) {
-
-            Restaurant restaurant = DataProvider.getRestaurantByIndex(rId);
-            MenuItem menuItem = restaurant.getMenuItem(iId);
-            DataProvider.shoppingcart.add(menuItem);
-            System.out.println(DataProvider.shoppingcart.toString());
-        }
-        return "redirect:/homepage";
-    }
-
-
-
-
-
-
-
-
-    @PostMapping
-    public String deleteItem(){
-
-        return "redirect:/homepage";
-
-    }
-
 
 
 }

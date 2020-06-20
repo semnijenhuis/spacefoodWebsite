@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <tile th:text="'restaurant table from : ' + ${session.openrestaurant.getName()}">Default title text</tile>
+
     <link rel="stylesheet" href="/restaurant.css">
 </head>
 
@@ -13,58 +13,122 @@
 </svg>
 
 
+<div class="line-container">
 
-<div class="restaurant-container">
     <div>
-        <img id="restaurantstart" src="restaurantstart.png" srcset="restaurantstart.jpg">
+        <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
+
+    </div>
+    <div>
+        <svg class="menuline" viewBox="0 0 353.072 3">
+            <path id="menuline" d="M 0 0 L 353.07177734375 0">
+            </path>
+        </svg>
     </div>
 
-    <div id="Lets_go_on_a_food_mission">
-        <span th:text="'Found something ' + ${session.userobject.getFirstName()} + '?'"></span>
-        </br>
-        <span>Let’s go on a food mission</span>
+    <div>
+        <div style="width: 100px; height: 200px; float:left; display:inline-block"></div>
+
     </div>
+
 </div>
 
 
+<div class="restaurant-container">
+    <div id="Lets_go_on_a_food_mission">
+        <span th:text="''+ ${session.openrestaurant.getName()}"></span>
+        </br>
+        </br>
+        <span th:text="''+ ${session.openrestaurant.getQuote()}"></span>
+
+    </div>
+</div>
+
+<div class="line-container">
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
+
+    </div>
+
+    <div>
+        <svg class="menuline" viewBox="0 0 353.072 3">
+            <path id="menuline" d="M 0 0 L 353.07177734375 0">
+            </path>
+        </svg>
+    </div>
+
+    <div>
+        <div style="width: 100px; height: 300px; float:left; display:inline-block"></div>
+
+    </div>
+
+</div>
 
 
-<form action="/shoppingcart/add"  method="post">
-
-    <label for="rId"><b>rId</b></label>
-    <input type="text" step="any" id="rId" placeholder="Enter restaurant id here"    name="rId" >
-
-    <label for="iId"><b>iId</b></label>
-    <input type="number" step="any" id="iId" placeholder="Enter item id here"    name="iId" >
-
-    <label for="quantity"><b>quantity</b></label>
-    <input type="number" step="any"  id="quantity" placeholder="Enter price"    name="quantity" >
-
-    <input type="submit"/>
-
-</form>
+<div class="additem-container">
 
 
-<form action="/homepage/createmenuitem/"  method="post">
-    <label for="name"><b>name</b></label>
-    <input type="text" id="name" placeholder="Enter name"    name="name" >
 
-    <label for="description"><b>description</b></label>
-    <input type="text" id="description" placeholder="Enter description"    name="description" >
-
-    <label for="price"><b>price</b></label>
-    <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" >
-
-    <input type="submit"/>
+    <form th:action="'/homepage/additem/' + ${session.openrestaurant.getId()}"    method="post">
 
 
-</form>
+        <label for="name"><b>name</b></label>
+        <input type="text" id="name" placeholder="Enter name"    name="name" >
 
+        <label for="description"><b>description</b></label>
+        <input type="text" id="description" placeholder="Enter description"    name="description" >
+
+        <label for="price"><b>price</b></label>
+        <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" >
+
+        <input type="submit"/>
+    </form>
+
+    <div id="Lets_go_on_a_food_mission">
+        <span>it looks nice but...</span>
+        </br>
+        <span>Would you like to add a item?</span>
+    </div>
+
+
+</div>
+
+<div class="line-container">
+
+    <div>
+        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
+
+    </div>
+
+    <div>
+        <svg class="menuline" viewBox="0 0 353.072 3">
+            <path id="menuline" d="M 0 0 L 353.07177734375 0">
+            </path>
+        </svg>
+    </div>
+
+
+    <div>
+        <div style="width: 100px; height: 100px; float:left; display:inline-block"></div>
+
+    </div>
+
+</div>
+
+<div class="restaurant-container">
+    <div id="Lets_go_on_a_food_mission">
+        <span>Let's start our search then!!</span>
+
+    </div>
+</div>
+
+<div style="width: 100px; height: 200px; float:left; display:inline-block"></div>
 
 
 <div class="grid-container">
 
-    <tr th:each="menuitem: ${restaurants.get(0).getMenu()}">
+    <tr th:each="menuitem: ${session.openrestaurant.getMenu()}">
 
         <div>
             <td th:text="${#strings.toUpperCase(menuitem.getName())}"></td>
