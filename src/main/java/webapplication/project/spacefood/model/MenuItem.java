@@ -5,7 +5,7 @@ public class MenuItem {
     private String description;
     private double price;
     private int id;
-    private static int idCounter = 0;
+    private int idCounter = 0;
 
     public MenuItem(String name, String description, double price) {
         this.name = name;

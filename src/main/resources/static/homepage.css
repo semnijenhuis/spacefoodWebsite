@@ -6,16 +6,18 @@ body{
 button {
     border-radius: 3px;
     background-color: #e7e7e7; color: black;
-    border: #e7e7e7; color: black;
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
+    border: #e7e7e7;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.19);
     width: 100%;
     height: 40px;
 }
+
 button:hover{
     background-color:  rgb(111, 111, 111);
     color: white;
 
 }
+
 .home-container{
     display: grid;
     width: 100%;
@@ -28,7 +30,7 @@ button:hover{
 
 .home-container > div {
     border-radius: 6px;
-    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     align-items:center;
     padding: 40px 0;
     justify-content: center;
@@ -46,7 +48,7 @@ button:hover{
 
 .line-container > div {
     border-radius: 6px;
-    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     align-items:center;
     font-size: 30px;
     justify-content: center;
@@ -64,15 +66,12 @@ button:hover{
 
 .add-container > div {
     border-radius: 6px;
-    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+   drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     align-items:center;
     padding: 40px 0;
     font-size: 30px;
     justify-content: center;
 }
-
-
-
 
 #homepageimage {
     position: relative;
@@ -96,7 +95,6 @@ button:hover{
     font-size: 50px;
     color: rgba(93,93,93,1);
 }
-
 
 .grid-container {
     display: grid;
@@ -132,7 +130,6 @@ button:hover{
     display: grid;
     grid-template-columns: auto auto;
     position: relative;
-    margin: autopx
 }
 
 #restaurantAddresUnderline {
@@ -144,6 +141,7 @@ button:hover{
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
+
 .restaurantAddresUnderline {
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     overflow: visible;
@@ -162,6 +160,7 @@ button:hover{
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
+
 .menuline {
     position: center;
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
@@ -173,9 +172,9 @@ button:hover{
 
 .button{
     border-radius: 3px;
-    background-color: #545454; color: black;
+    background-color: #545454;
     border: #e7e7e7; color: white;
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
     width: 90%;
     height: 40px;
 
@@ -184,6 +183,7 @@ button:hover{
     position: relative;
     transition: 0.5s;
 }
+
 .button:hover {
     background-color:  rgb(208, 61, 61);
     color: black;
@@ -230,6 +230,7 @@ input[type=text]:hover {
     stroke-miterlimit: 4;
     shape-rendering: auto;
 }
+
 .Polygon_2 {
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     overflow: hidden;
@@ -238,8 +239,8 @@ input[type=text]:hover {
     height: 550px;
     transform: matrix(1,0,0,1,-265.5,253.5) rotate(90deg);
     transform-origin: center;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
 }
 
 .topbar-container{
@@ -253,7 +254,7 @@ input[type=text]:hover {
 
 .topbar-container > div {
     border-radius: 6px;
-    ter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
+    drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     align-items:center;
     justify-content: space-evenly;
 }

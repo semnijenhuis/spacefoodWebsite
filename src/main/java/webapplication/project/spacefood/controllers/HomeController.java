@@ -4,39 +4,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import webapplication.project.spacefood.model.DataProvider;
-
 import webapplication.project.spacefood.model.MenuItem;
 import webapplication.project.spacefood.model.Restaurant;
-
 import javax.servlet.http.HttpSession;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/homepage")
 public class HomeController {
 
-
-
+    // opens the homepage
     @GetMapping("")
     public String getHomepage(Model model) {
         model.addAttribute("restaurants",DataProvider.getRestaurants());
         return "homepage";
     }
 
-    @GetMapping("/redirect")
-    public String getredirect( ) {
-
-        return "redirect:/homepage";
+    // search a restaurant
+    @GetMapping("/searchrestaurant")
+    public String searchRestaurant(String name, Model model) {
+        model.addAttribute("restaurants",DataProvider.getSearchList(name));
+        return "homepage";
     }
 
-
-    @GetMapping("/delete/{id}")
-    public String getDeleteRestaurantDetails(@PathVariable("id")Integer id, HttpSession session) {
-        DataProvider.deleteRestaurant(DataProvider.getRestaurantByIndex(id));
-        return "redirect:/homepage";
-
-    }
-
-
+    // opens the restaurant you've clicked
     @GetMapping("/restaurant/{id}")
     public String getRestaurantDetails(@PathVariable("id")Integer id, HttpSession session,Model model) {
         model.addAttribute("restaurants",DataProvider.getRestaurants());
@@ -46,45 +37,34 @@ public class HomeController {
 
     }
 
+    // creates a new restaurant
     @PostMapping("/createrestaurant")
     public String createRestaurant(Restaurant restaurant) {
         DataProvider.addRestaurant(restaurant);
-
         System.out.print(DataProvider.getRestaurants());
-
         return "redirect:/homepage";
     }
 
-    @PostMapping("/createmenuitem/{id}")
-    public String createMenuItem(@PathVariable("id")Integer id,MenuItem menuItem,HttpSession session, Model model) {
-
-
-        DataProvider.getRestaurantByIndex(id).addMenuItem(menuItem);
-        System.out.println(DataProvider.getRestaurantByIndex(0).getMenu().toString());
-
-
+    // Deletes restaurant you've choosen
+    @GetMapping("/delete/{id}")
+    public String getDeleteRestaurantDetails(@PathVariable("id") Integer id) {
+        DataProvider.deleteRestaurant(DataProvider.getRestaurantByIndex(id));
         return "redirect:/homepage";
+
     }
 
+    // creates a new menu item inside the restaurant you are
     @PostMapping("/additem/{name}")
     public String addItem(@PathVariable("name")Integer name, MenuItem menuItem) {
-
-       DataProvider.getRestaurantByIndex(name).addMenuItem(menuItem);
-
-
-
-        String url = "redirect:/homepage/restaurant/"  +name ;
-
-        return url;
+       Objects.requireNonNull(DataProvider.getRestaurantByIndex(name)).addMenuItem(menuItem);
+        return "redirect:/homepage/restaurant/"  +name;
     }
 
-
-
+    // Deletes a  menu item inside the restaurant you are
     @PostMapping("/delete/item/{name}")
     public String deleteItem(@PathVariable("name")String name) {
 
-        String string = name;
-        String[] parts = string.split("-");
+        String[] parts = name.split("-");
         String restaurantName = parts[0];
         String menuName = parts[1];
 
@@ -93,17 +73,6 @@ public class HomeController {
 
         DataProvider.getRestaurants().get(restaurantIDint).getMenu().remove(menuIDint);
 
-        DataProvider.calculateTotal();
-
-        String url = "redirect:/homepage/restaurant/"  +restaurantIDint ;
-
-        return url;
+        return "redirect:/homepage/restaurant/"  +restaurantIDint;
     }
-
-
-
-
 }
-
-
-//mediaqurie

@@ -139,7 +139,7 @@
     </div>
     <div class="search-container">
         <form action="/homepage/searchrestaurant" method="GET">
-            <input type="text" id="name" placeholder="Enter company name"    name="name" required>
+            <input type="text" id="name" placeholder="Enter here (cap sensitive)"    name="name" required>
             <button type="submit">let's find it!</button>
         </form>
     </div>
@@ -174,7 +174,7 @@
     <div class="grid-container">
         <tr th:each="restaurant: ${restaurants}">
             <div>
-                <td th:text="${#strings.toUpperCase(restaurant.getName())}"></td>
+                <td th:text="${restaurant.getName()}"></td>
                 <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
                     <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
                     </path>

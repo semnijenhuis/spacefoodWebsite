@@ -1,12 +1,11 @@
 package webapplication.project.spacefood.model;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
 
-   private List<MenuItem> menu;
+    private List<MenuItem> menu;
     private String name;
     private String address;
     private String zipCode;
@@ -34,26 +33,13 @@ public class Restaurant {
         return null;
     }
 
-    public MenuItem getMenuName(String name){
-        for (int i = 0; i < menu.size() ; i++) {
-            if (name == menu.get(i).getName()){
-                return menu.get(i);
-            }
-        }
-        return null;
-    }
-
     public void addMenuItem(MenuItem menuItem){
         menu.add(menuItem);
     }
 
-
-
     public List<MenuItem> getMenu() {
         return menu;
     }
-
-
 
     public int getId() {
         return id;
