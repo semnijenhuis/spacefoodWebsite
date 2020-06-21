@@ -62,11 +62,8 @@ public class LoginController {
         if(usernames.contains(user.getEmail()) ){
             for (int i = 0; i < DataProvider.users.size() ; i++) {
                 User search = DataProvider.getUsers().get(i);
-                System.out.println("fase1");
                 if (search.getEmail().equals(user.getEmail())){
-                    System.out.println("fase2");
                     if (search.getPassword().equals(user.getPassword())){
-                        System.out.println("fase3");
                         session.setAttribute("userobject",search);
                         return "redirect:/homepage";
                     }
