@@ -11,19 +11,41 @@ public class DataProvider {
     public static double totalPrice;
 
     static {
-         User user1 = new User("Anh","Pham","test","pass");
-         User user2 = new User("Sem","Nijenhuis","470066@student.saxion.nl","Test02");
+         User user1 = new User("Anh","Pham","anhpham@spacefood","spacefood");
+         User user2 = new User("Sem","Nijenhuis","semnijenhuis@spacefood","spacefood");
 
          users.add(user1);
          users.add(user2);
-         restaurants.add(new Restaurant("McDonalds","Dennenberg 38","7064HW","Silvolde","loveIt"));
-         restaurants.add(new Restaurant("subway","Dennenberg 38","7064HW","Silvolde","loveIt"));
-         restaurants.add(new Restaurant("kfc","Dennenberg 38","7064HW","Silvolde","loveIt"));
-         restaurants.add(new Restaurant("dominos","Dennenberg 38","7064HW","Silvolde","loveIt"));
 
-         MenuItem menuItem1 = new MenuItem("Fries1","Frech baked patatos",55.7);
-         restaurants.get(0).addMenuItem(menuItem1);
-         shoppingcart.add(menuItem1);
+         restaurants.add(new Restaurant("Yume Deventer","Boreelplein 52","7411EH","Deventer","yume"));
+         restaurants.add(new Restaurant("Ayami","Keizerstraat 41","7411HE","Deventer","love this"));
+         restaurants.add(new Restaurant("I Love Sushi","Smedenstraat 54","7411RE","Deventer","i love shushi"));
+         restaurants.add(new Restaurant("Pokélivery","Keizerstraat 41","7411HE","Deventer","poke"));
+         restaurants.add(new Restaurant("Shalom","Grote Overstraat 69","7411JB","Deventer","master grill"));
+         restaurants.add(new Restaurant("Brink Express","T.g. Gibsonstraat 24","7411RS","Deventer","Brink brink"));
+         restaurants.add(new Restaurant("Barnies Kipcorner","Hoge Rij 101","7413WX","Deventer","barnes"));
+         restaurants.add(new Restaurant("Big Burger Delivery","Kamperstraat 24","7418CB","Deventer","Bigger better"));
+         restaurants.add(new Restaurant("Domino's Pizza","Achter de Broederen 13","7411PS","Deventer","take a slice"));
+         restaurants.add(new Restaurant("Subway","Smedenstraat 14","7411RC","Deventer","the best bread"));
+
+
+        MenuItem menuItem1 = new MenuItem("Fries","Frech baked patatos",1.50);
+        MenuItem menuItem2 = new MenuItem("Pizza magerita","The one and only classic",5.50);
+        MenuItem menuItem3 = new MenuItem("Doner kabab","the meal for the night",6.00);
+        MenuItem menuItem4 = new MenuItem("Cookie","For all cookiemonsters",1.00);
+        MenuItem menuItem5 = new MenuItem("Fresh Salad","to lose weight?",1.50);
+        MenuItem menuItem6 = new MenuItem("Brownie","Now we are talkin!",1.50);
+        MenuItem menuItem7 = new MenuItem("Milkshake","Why is it so crowed in my yard?",2.00);
+
+        restaurants.get(0).addMenuItem(menuItem1);
+        restaurants.get(0).addMenuItem(menuItem2);
+        restaurants.get(0).addMenuItem(menuItem3);
+        restaurants.get(0).addMenuItem(menuItem4);
+        restaurants.get(0).addMenuItem(menuItem5);
+        restaurants.get(0).addMenuItem(menuItem6);
+        restaurants.get(0).addMenuItem(menuItem7);
+
+
 
     }
 
