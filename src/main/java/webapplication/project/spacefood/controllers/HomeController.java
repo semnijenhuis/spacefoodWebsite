@@ -80,6 +80,26 @@ public class HomeController {
 
 
 
+    @PostMapping("/delete/item/{name}")
+    public String deleteItem(@PathVariable("name")String name) {
+
+        String string = name;
+        String[] parts = string.split("-");
+        String restaurantName = parts[0];
+        String menuName = parts[1];
+
+        int restaurantIDint=Integer.parseInt(restaurantName);
+        int menuIDint=Integer.parseInt(menuName);
+
+        DataProvider.getRestaurants().get(restaurantIDint).getMenu().remove(menuIDint);
+
+        DataProvider.calculateTotal();
+
+        String url = "redirect:/homepage/restaurant/"  +restaurantIDint ;
+
+        return url;
+    }
+
 
 
 

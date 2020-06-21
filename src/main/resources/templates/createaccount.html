@@ -28,20 +28,20 @@
 
             <label for="firstName"><b>First name</b></label>
             <br/>
-            <input type="text" id="firstName" placeholder="Enter email address"    name="firstName" >
+            <input type="text" id="firstName" placeholder="Enter email address"    name="firstName" required>
             <br/>
             <label for="lastName"><b>Last name</b></label>
             <br/>
-            <input type="text" id="lastName" placeholder="Enter email address"    name="lastName" >
+            <input type="text" id="lastName" placeholder="Enter email address"    name="lastName" required >
             <br/>
             <label for="email"><b>Email address</b></label>
             <br/>
-            <input type="text" id="email" placeholder="Enter email address"    name="email" >
+            <input type="text" id="email" placeholder="Enter email address"    name="email" required>
             <br/>
 
             <label for="password"><b>Password</b></label>
             <br/>
-            <input type="password" id="password" placeholder="Enter password"    name="password" >
+            <input type="password" id="password" placeholder="Enter password"    name="password" required>
             <br/>
             <td   th:if="${errormessage}"  th:text="${errormessage}"  ></td>
             <br/>

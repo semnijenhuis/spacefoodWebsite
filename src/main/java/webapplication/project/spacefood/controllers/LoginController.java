@@ -61,19 +61,25 @@ public class LoginController {
     @PostMapping("/login")
     public String checkAccount(HttpSession session, User user, Model model) {
 
-        if(usernames.contains(user.getEmail()) && password.contains(user.getPassword() )){
+        if(usernames.contains(user.getEmail()) ){
 
             for (int i = 0; i < DataProvider.users.size() ; i++) {
                 User search = DataProvider.getUsers().get(i);
 
+                System.out.println("fase1");
+
                 if (search.getEmail().equals(user.getEmail())){
+
+                    System.out.println("fase2");
 
 
                     if (search.getPassword().equals(user.getPassword())){
-
+                        System.out.println("fase3");
                         session.setAttribute("userobject",search);
                         return "redirect:/homepage";
                     }
+
+                    System.out.println("fase4");
                     model.addAttribute("errormessage","password incorrect ");
                     return "loginscreen";
                 }

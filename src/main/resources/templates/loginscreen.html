@@ -32,11 +32,11 @@
                 </div>
                 <label for="email"><b>Email address</b></label>
                 <br/>
-                <input type="text" id="email" placeholder="Enter email address"    name="email" >
+                <input type="text" id="email" placeholder="Enter email address"    name="email"  required>
                 <br/>
                 <label for="password"><b>Password</b></label>
                 <br/>
-                <input type="password" id="password" placeholder="Enter password"    name="password" >
+                <input type="password" id="password" placeholder="Enter password"    name="password" required>
                 <br/>
                 <td   th:if="${errormessage}"  th:text="${errormessage}"  ></td>
                 <br/>

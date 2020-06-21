@@ -77,13 +77,13 @@
 
 
         <label for="name"><b>name</b></label>
-        <input type="text" id="name" placeholder="Enter name"    name="name" >
+        <input type="text" id="name" placeholder="Enter name"    name="name" required>
 
         <label for="description"><b>description</b></label>
-        <input type="text" id="description" placeholder="Enter description"    name="description" >
+        <input type="text" id="description" placeholder="Enter description"    name="description" required>
 
         <label for="price"><b>price</b></label>
-        <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" >
+        <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" required>
 
         <input type="submit"/>
     </form>
@@ -164,6 +164,10 @@
 
             <form id="button"  th:action="'/shoppingcart/testadd/' + ${session.openrestaurant.getId()} +'-' + ${menuitem.getId()}"    method="post">
                 <input type="submit" value="Add" class="button" />
+            </form>
+
+            <form id="button"  th:action="'/homepage/delete/item/' + ${session.openrestaurant.getId()} +'-' + ${menuitem.getId()}"    method="post">
+                <input type="submit" value="Delete" class="button" />
             </form>
 
 
