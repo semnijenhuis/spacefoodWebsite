@@ -1,47 +1,29 @@
+<!--suppress ALL -->
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <link rel="stylesheet" href="/homepage.css">
 </head>
 
 <body>
+ <div class="topbar-container">
+    <form action="/shoppingcart" method="GET"> <button class="button" type="submit">Cart</button> </form>
+    <form action="cookiehome" method="GET"> <button class="button" type="submit">Home</button> </form>
+    <form action="/logout" method="GET"> <button class="button" type="submit">Log out</button></form>
+ </div>
 
-<div class="topbar-container">
+ <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
 
-    <form action="/shoppingcart" method="GET">
-        <button class="button" type="submit">Cart</button>
-    </form>
-    <form action="cookiehome" method="GET">
-        <button class="button" type="submit">Home</button>
-    </form>
-    <form action="/logout" method="GET">
-        <button class="button" type="submit">Log out</button>
-    </form>
-
-</div>
-
-<div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
-
-
-<div class="home-container">
-    <div>
-        <img id="homepageimage" src="homepageimage.png" srcset="homepageimage.png 1x, homepageimage@2x.png 2x">
-    </div>
-
-    <div id="Lets_go_on_a_food_mission">
-        <span th:text="'Welcome back ' + ${session.userobject.getFirstName()}"></span>
+ <div class="home-container">
+     <div> <img id="homepageimage" src="homepageimage.png" srcset="homepageimage.png 1x, homepageimage@2x.png 2x"> </div>
+     <div id="Lets_go_on_a_food_mission"> <span th:text="'Welcome back ' + ${session.userobject.getFirstName()}"></span>
         </br>
         <span>Let’s go on a food mission</span>
     </div>
-</div>
+ </div>
 
-
-
-<div class="line-container">
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div>
-
-    </div>
+ <div class="line-container">
+     <div> <div id="spacer" style="width: 100px; height: 100px; float:left; display:inline-block"></div> </div>
 
     <div>
         <svg class="menuline" viewBox="0 0 353.072 3">
@@ -50,28 +32,13 @@
         </svg>
     </div>
 
-    <div>
-        <div style="width: 100px; height: 200px; float:left; display:inline-block"></div>
-
-    </div>
-
+    <div> <div style="width: 100px; height: 200px; float:left; display:inline-block"></div> </div>
 </div>
 
-
-
-
-
-
-
-
-
-<div class="add-container">
-
-    <div id="Lets_go_on_a_food_mission">
-        <span>before we start our quest</span>
+ <div class="add-container">
+    <div id="Lets_go_on_a_food_mission"> <span>before we start our quest</span>
         </br>
         <span>Would you like to add a restaurant?</span>
-
     </div>
 
     <form action="/homepage/createrestaurant" method="POST">
@@ -89,15 +56,10 @@
         </br>
         <button type="submit">Add restaurant</button>
     </form>
+ </div>
 
-</div>
-
-<div class="line-container">
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 200px; float:left; display:inline-block"></div>
-
-    </div>
+ <div class="line-container">
+    <div> <div id="spacer" style="width: 100px; height: 200px; float:left; display:inline-block"></div> </div>
 
     <div>
         <svg class="menuline" viewBox="0 0 353.072 3">
@@ -106,22 +68,9 @@
         </svg>
     </div>
 
-    <div>
-        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
-
-    </div>
-
-    <div id="Lets_go_on_a_food_mission">
-
-        <span>LIFT OFF!!</span>
-
-    </div>
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
-
-    </div>
-
+    <div> <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div> </div>
+    <div id="Lets_go_on_a_food_mission"> <span>LIFT OFF!!</span> </div>
+    <div> <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div></div>
     <div>
         <svg class="menuline" viewBox="0 0 353.072 3">
             <path id="menuline" d="M 0 0 L 353.07177734375 0">
@@ -129,52 +78,24 @@
         </svg>
     </div>
 
-    <div>
-        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
+    <div> <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div> </div>
 
-    </div>
+    <div id="Lets_go_on_a_food_mission"> <span>Or search one?</span> </div>
 
-    <div id="Lets_go_on_a_food_mission">
-        <span>Or search one?</span>
-    </div>
     <div class="search-container">
         <form action="/homepage/searchrestaurant" method="GET">
             <input type="text" id="name" placeholder="Enter here (cap sensitive)"    name="name" required>
             <button type="submit">let's find it!</button>
         </form>
     </div>
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 150px; float:left; display:inline-block"></div>
-
-    </div>
-
-
-
-
-
+    <div> <div id="spacer" style="width: 100px; height: 150px; float:left; display:inline-block"></div> </div>
+ </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-    <div class="grid-container">
-        <tr th:each="restaurant: ${restaurants}">
-            <div>
-                <td th:text="${restaurant.getName()}"></td>
+ <div class="grid-container">
+     <tr th:each="restaurant: ${restaurants}">
+         <div>
+             <td th:text="${restaurant.getName()}"></td>
                 <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
                     <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
                     </path>
@@ -186,7 +107,6 @@
             <br/>
             <td th:text="${restaurant.getCity()}"></td>
             <br/>
-
                 <div class="small-container">
                     <form id="button"  th:action="'/homepage/restaurant/' + ${restaurant.id}"    method="get">
                     <input type="submit" value="Open" class="button" />
@@ -196,33 +116,18 @@
                     <input type="submit" value="Delete" class="button" />
                     </form>
                 </div>
-            </div>
-        </tr>
-    </div>
-
-
-
-
+         </div>
+     </tr>
+ </div>
 
 </body>
 
 <footer>
     <div id="spacer"  style="width: 100px; height: 800px; float:left; display:inline-block"></div>
-
-    <div class="topbar-container">
-
-        <form action="/shoppingcart" method="GET">
-            <button class="button" type="submit">Cart</button>
-        </form>
-        <form action="/cookiehome" method="GET">
-            <button class="button" type="submit">Home</button>
-        </form>
-        <form action="/logout" method="GET">
-            <button class="button" type="submit">Log out</button>
-        </form>
-
+    <div class="topbar-container"><form action="/shoppingcart" method="GET"> <button class="button" type="submit">Cart</button></form>
+        <form action="/cookiehome" method="GET"><button class="button" type="submit">Home</button></form>
+        <form action="/logout" method="GET"><button class="button" type="submit">Log out</button></form>
     </div>
 </footer>
-
 
 </html>

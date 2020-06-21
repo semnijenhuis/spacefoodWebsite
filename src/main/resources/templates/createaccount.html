@@ -1,31 +1,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Creating Account page</title>
     <link rel="stylesheet" href="/createaccount.css">
 </head>
 
 <body>
-
 <svg class="background" viewBox="0 0 1080 1663">
-    <path id="background" d="M 540 0 L 1080 1663 L 0 1663 Z">
-    </path>
+    <path id="background" d="M 540 0 L 1080 1663 L 0 1663 Z"></path>
 </svg>
 
 <div class="grid-container">
-
-<div>
-    <img id="Image_3" src="Image_3.png" srcset="Image_3.png 1x, Image_3@2x.png 2x">
-</div>
-
     <div>
-
+        <img id="Image_3" src="Image_3.png" srcset="Image_3.png 1x, Image_3@2x.png 2x">
+    </div>
+    
+    <div>
         <form id="createform" action="/createaccount" method="post">
-
-            <div id="LoginText">
-                <h1>Hey! join us</h1>
-            </div>
-
-
+            <div id="LoginText"> <h1>Hey! join us</h1> </div>
+            
             <label for="firstName"><b>First name</b></label>
             <br/>
             <input type="text" id="firstName" placeholder="Enter email address"    name="firstName" required>
@@ -38,28 +31,15 @@
             <br/>
             <input type="text" id="email" placeholder="Enter email address"    name="email" required>
             <br/>
-
             <label for="password"><b>Password</b></label>
             <br/>
             <input type="password" id="password" placeholder="Enter password"    name="password" required>
             <br/>
-            <td   th:if="${errormessage}"  th:text="${errormessage}"  ></td>
             <br/>
             <button type="submit">Login</button>
-
         </form>
-
     </div>
-
-
-
-
-
-
 </div>
-
-
 </body>
-
 
 </html>

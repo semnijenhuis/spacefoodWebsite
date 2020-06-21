@@ -1,43 +1,27 @@
+<!--suppress ALL -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <link rel="stylesheet" href="/restaurant.css">
 </head>
 
 <body>
-
 <svg class="Polygon_2" viewBox="0 0 1080 550">
     <path id="Polygon_2" d="M 540 0 L 1080 550 L 0 550 Z">
     </path>
 </svg>
 
 <div class="topbar-container">
-
-    <form action="/shoppingcart" method="GET">
-        <button class="button" type="submit">Cart</button>
-    </form>
-    <form action="/cookiehome" method="GET">
-        <button class="button" type="submit">Home</button>
-    </form>
+    <form action="/shoppingcart" method="GET"> <button class="button" type="submit">Cart</button></form>
+    <form action="/cookiehome" method="GET"><button class="button" type="submit">Home</button></form>
     <form action="/logout" method="GET">
         <button class="button" type="submit">Log out</button>
     </form>
 
 </div>
 
-
-
-
 <div class="line-container">
-
-
-    <div>
-        <div style="width: 100px; height: 200px; float:left; display:inline-block"></div>
-
-    </div>
-
+    <div> <div style="width: 100px; height: 200px; float:left; display:inline-block"></div></div>
 </div>
-
 
 <div class="restaurant-container">
     <div id="Lets_go_on_a_food_mission">
@@ -45,16 +29,11 @@
         </br>
         </br>
         <span th:text="''+ ${session.openrestaurant.getQuote()}"></span>
-
     </div>
 </div>
 
 <div class="line-container">
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
-
-    </div>
+    <div> <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div></div>
 
     <div>
         <svg class="menuline" viewBox="0 0 353.072 3">
@@ -63,50 +42,29 @@
         </svg>
     </div>
 
-    <div>
-        <div style="width: 100px; height: 300px; float:left; display:inline-block"></div>
-
-    </div>
-
+    <div> <div style="width: 100px; height: 300px; float:left; display:inline-block"></div> </div>
 </div>
-
 
 <div class="additem-container">
     <div>
-    <form th:action="'/homepage/additem/' + ${session.openrestaurant.getId()}"    method="post">
-
-
+        <form th:action="'/homepage/additem/' + ${session.openrestaurant.getId()}"    method="post">
         <label for="name"><b>name</b></label>
         <input type="text" id="name" placeholder="Enter name"    name="name" required>
-
         <label for="description"><b>description</b></label>
         <input type="text" id="description" placeholder="Enter description"    name="description" required>
-
         <label for="price"><b>price</b></label>
         <input type="number" step="any"  id="price" placeholder="Enter price"    name="price" required>
-
         <button type="submit">Add item</button>
-    </form>
-</div>
-    <div id="Lets_go_on_a_food_mission">
-        <span>it looks nice but...</span>
+        </form>
+    </div>
+        <div id="Lets_go_on_a_food_mission"> <span>it looks nice but...</span>
         </br>
         <span>Would you like to add a item?</span>
-    </div>
-
-
+        </div>
 </div>
 
-
-
-
-
 <div class="line-container">
-
-    <div>
-        <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div>
-
-    </div>
+    <div> <div id="spacer" style="width: 100px; height: 300px; float:left; display:inline-block"></div></div>
 
     <div>
         <svg class="menuline" viewBox="0 0 353.072 3">
@@ -114,74 +72,44 @@
             </path>
         </svg>
     </div>
-
-
-    <div>
-        <div style="width: 100px; height: 100px; float:left; display:inline-block"></div>
-
-    </div>
-
+    <div><div style="width: 100px; height: 100px; float:left; display:inline-block"></div></div>
 </div>
 
 <div class="restaurant-container">
-    <div id="Lets_go_on_a_food_mission">
-        <span>Let's start our search then!!</span>
-
-    </div>
+    <div id="Lets_go_on_a_food_mission"> <span>Let's start our search then!!</span> </div>
 </div>
 
 <div style="width: 100px; height: 200px; float:left; display:inline-block"></div>
 
-
 <div class="grid-container">
-
     <tr th:each="menuitem: ${session.openrestaurant.getMenu()}">
-
         <div>
             <td th:text="${#strings.toUpperCase(menuitem.getName())}"></td>
             <br/>
-
             <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
                 <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
                 </path>
             </svg>
             <br/>
-
             <td th:text="${menuitem.getDescription()}"></td>
             <br/>
-
-
             <svg class="restaurantAddresUnderline" viewBox="0 0 353.072 3">
                 <path id="restaurantAddresUnderline" d="M 0 0 L 353.07177734375 0">
                 </path>
             </svg>
-
             <br/>
-            <td th:text="${menuitem.getPrice()}"></td>
+            <td th:text="'$'+${menuitem.getPrice()}"></td>
             <br/>
-
-
-
             <form id="button"  th:action="'/shoppingcart/testadd/' + ${session.openrestaurant.getId()} +'-' + ${menuitem.getId()}"    method="post">
                 <input type="submit" value="Add" class="button" />
             </form>
-
             <form id="button"  th:action="'/homepage/delete/item/' + ${session.openrestaurant.getId()} +'-' + ${menuitem.getId()}"    method="post">
                 <input type="submit" value="Delete" class="button" />
             </form>
-
-
             </form>
-
         </div>
-
     </tr>
-
 </div>
-
-
-
-
 
 </body>
 
@@ -189,17 +117,9 @@
     <div id="spacer"  style="width: 100px; height: 800px; float:left; display:inline-block"></div>
 
     <div class="topbar-container">
-
-        <form action="/shoppingcart" method="GET">
-            <button class="button" type="submit">Cart</button>
-        </form>
-        <form action="/cookiehome" method="GET">
-            <button class="button" type="submit">Home</button>
-        </form>
-        <form action="/logout" method="GET">
-            <button class="button" type="submit">Log out</button>
-        </form>
-
+        <form action="/shoppingcart" method="GET"> <button class="button" type="submit">Cart</button> </form>
+        <form action="/cookiehome" method="GET"><button class="button" type="submit">Home</button> </form>
+        <form action="/logout" method="GET"><button class="button" type="submit">Log out</button></form>
     </div>
 </footer>
 

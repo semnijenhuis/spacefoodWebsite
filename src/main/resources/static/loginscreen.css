@@ -3,7 +3,6 @@ body{
     font-family: Helvetica Neue, serif;
 }
 
-
 input[type=text], select {
     width: 100%;
     padding: 12px 20px;
@@ -40,15 +39,11 @@ input[type=password]:hover {
     padding-left: 25px;
 }
 
-
-
-
-
 button {
     border-radius: 3px;
     background-color: #e7e7e7; color: black;
-    border: #e7e7e7; color: black;
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+    border: #e7e7e7;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
     width: 90%;
     height: 40px;
 
@@ -57,6 +52,7 @@ button {
     position: relative;
     transition: 0.5s;
 }
+
 button:hover{
     background-color:  rgba(255,251,229,1);
     color: black;
@@ -78,8 +74,8 @@ button:after {
 .button{
     border-radius: 3px;
     background-color: #e7e7e7; color: black;
-    border: #e7e7e7; color: black;
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
+    border: #e7e7e7;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.2), 0 1px 8px 0 rgba(0,0,0,0.19);
     width: 90%;
     height: 40px;
 
@@ -88,6 +84,7 @@ button:after {
     position: relative;
     transition: 0.5s;
 }
+
 .button:hover {
     background-color:  rgba(255,251,229,1);
     color: black;
@@ -106,8 +103,6 @@ button:after {
     transition: 0.5s;
 }
 
-
-
 .loginform {
 
     position: relative;
@@ -115,7 +110,7 @@ button:after {
     overflow: visible;
     white-space: nowrap;
     text-align: left;
-    font-family: Helvetica Neue;
+    font-family: Helvetica Neue, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
@@ -129,12 +124,13 @@ button:after {
     overflow: visible;
     text-align: center;
     white-space: nowrap;
-    font-family: Helvetica Neue;
+    font-family: Helvetica Neue, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
     color: rgba(255,255,255,1);
 }
+
 #LoginImage {
     filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     position: relative;
@@ -142,6 +138,7 @@ button:after {
     height: 613px;
     overflow: visible;
 }
+
 #loginquote {
     filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
     position: relative;
@@ -149,7 +146,7 @@ button:after {
     width: 421px;
     white-space: nowrap;
     text-align: center;
-    font-family: Helvetica Neue;
+    font-family: Helvetica Neue, serif;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -171,7 +168,7 @@ button:after {
 }
 
 .grid-container > div {
-    ter: drop-shadow(0px -6px 10px rgba(0, 0, 0, 0.161));
+   drop-shadow(0px -6px 10px rgba(0, 0, 0, 0.161));
     text-align: center;
     padding: 40px 0;
     font-size: 30px;
@@ -180,6 +177,7 @@ button:after {
 #background {
     fill: rgba(217,91,56,1);
 }
+
 .background {
     filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.161));
     overflow: hidden;
@@ -188,6 +186,6 @@ button:after {
     height: 1663px;
     transform: matrix(1,0,0,1,549,-291) rotate(-90deg);
     transform-origin: center;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
 }

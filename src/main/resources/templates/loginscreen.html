@@ -1,32 +1,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-
     <title>loginscreen</title>
     <link rel="stylesheet" href="/loginscreen.css"/>
-
 </head>
 
 <body>
-
-
 <svg class="background" viewBox="0 0 1080 1663">
     <path id="background" d="M 540 0 L 1080 1663 L 0 1663 Z">
     </path>
 </svg>
 
-
-
-
 <div class="grid-container">
-
-    <div>
-        <img id="LoginImage" src="LoginImage.png" srcset="LoginImage.png 1x, LoginImage@2x.png 2x">
-    </div>
+    <div> <img id="LoginImage" src="LoginImage.png" srcset="LoginImage.png 1x, LoginImage@2x.png 2x"></div>
 
     <div>
         <div class="loginform">
             <form action="/login" method="post">
-
                 <div id="LoginText">
                     <h1>Login</h1>
                 </div>
@@ -44,21 +33,11 @@
                 <button type="submit">Login</button>
                 <br/>
                 <a th:href="@{/createaccount}">Create account</a>
-
             </form>
-
-
-
-            <div id="loginquote">
-            <span>What ever you would like to eat, we got you!</span>
+            <div id="loginquote"> <span>What ever you would like to eat, we got you!</span> </div>
         </div>
-        </div>
-
     </div>
-
 </div>
-
-
 
 </body>
 </html>
